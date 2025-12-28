@@ -11,7 +11,6 @@ RUN apt-get update -yy && \
         python3 \
         python3-pip \
         python3-pyaudio \
-		python3.11-venv \
         libffi-dev \
         alsa-utils \
 	libavformat-dev \
@@ -25,8 +24,7 @@ RUN apt-get update -yy && \
 
 COPY requirements.txt /airplay2/requirements.txt
 
-RUN python3 -m venv .venv
-RUN .venv/bin/pip install -r /airplay2/requirements.txt --no-cache-dir
+RUN pip3 install -r /airplay2/requirements.txt --no-cache-dir
 
 COPY ap2-receiver.py /airplay2/ap2-receiver.py
 COPY ap2 /airplay2/ap2
