@@ -11,6 +11,7 @@ RUN apt-get update -yy && \
         python3 \
         python3-pip \
         python3-pyaudio \
+		python3.11-venv \
         libffi-dev \
         alsa-utils \
 	libavformat-dev \
