@@ -26,7 +26,7 @@ RUN apt-get update -yy && \
 COPY requirements.txt /airplay2/requirements.txt
 
 RUN python3 -m venv .venv
-RUN source .venv/bin/activate
+RUN . .venv/bin/activate
 RUN pip3 install -r /airplay2/requirements.txt --no-cache-dir
 
 COPY ap2-receiver.py /airplay2/ap2-receiver.py
